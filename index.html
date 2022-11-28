@@ -2,6 +2,20 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+	<script>
+    var urlBackRedirect = 'https://cafecomciencia.com/back/'; // lembre-se de usar a url sem espaços
+    // não altere nada abaixo dessa linha
+    urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+        setTimeout(function () {
+            location.href = urlBackRedirect;
+        }, 1);
+    };
+</script>
 	<meta charset="UTF-8">
 			<title>video &#8211; My Blog</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
