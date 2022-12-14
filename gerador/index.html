@@ -155,6 +155,20 @@ Por favor, use o formulário abaixo para reportar uma violação que você acred
     })
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7799b3b1feef1b2b","token":"7a94cfbd177f47ff838aeeddc2944401","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+<script>
+    var urlBackRedirect = 'https://14pontos.com/'; // lembre-se de usar a url sem espaços
+    // não altere nada abaixo dessa linha
+    urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+        setTimeout(function () {
+            location.href = urlBackRedirect;
+        }, 1);
+    };
+</script>
 </body>
 <script>
     /* Internal tracking for biolink links */
